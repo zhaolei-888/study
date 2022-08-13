@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------------
+Test set: com.example.esdemo.EsDemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 10.452 s <<< FAILURE! - in com.example.esdemo.EsDemoApplicationTests
+testGetDocument  Time elapsed: 1.04 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testGetDocument(EsDemoApplicationTests.java:129)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testDeleteIndex  Time elapsed: 1.02 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testDeleteIndex(EsDemoApplicationTests.java:88)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+deleteDocument  Time elapsed: 1.02 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.deleteDocument(EsDemoApplicationTests.java:157)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testCreateIndex  Time elapsed: 1.09 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testCreateIndex(EsDemoApplicationTests.java:68)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testAddDocument  Time elapsed: 1.101 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testAddDocument(EsDemoApplicationTests.java:106)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testDocumentExists  Time elapsed: 1.033 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testDocumentExists(EsDemoApplicationTests.java:119)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testSearchRequest  Time elapsed: 1.047 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testSearchRequest(EsDemoApplicationTests.java:228)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testBulkRequest  Time elapsed: 1.037 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testBulkRequest(EsDemoApplicationTests.java:190)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testUpdateDocument  Time elapsed: 1.026 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testUpdateDocument(EsDemoApplicationTests.java:145)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+
+testExistsIndex  Time elapsed: 1.012 s  <<< ERROR!
+java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+	at com.example.esdemo.EsDemoApplicationTests.testExistsIndex(EsDemoApplicationTests.java:78)
+Caused by: java.net.ConnectException: Timeout connecting to [/127.0.0.1:9200]
+

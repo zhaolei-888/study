@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cdf9507b-0421-4952-a8e9-645932df3d73" name="linux01" url="http://192.168.91.128">
+        <fileTransfer accessType="SFTP" host="192.168.91.128" port="22" sshConfigId="01e64143-8005-4b9c-a8d8-14ed7d409a24" sshConfig="linux01">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="f00fb625-5ec5-4dbc-942f-d301de01508b" name="linux02">
+        <fileTransfer accessType="SFTP" host="192.168.91.129" port="22" sshConfigId="76354165-d9be-48d3-b36e-80746851850c" sshConfig="linux02">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="ae47b970-0264-40e9-af4d-1e77d4ce48cb" name="linux03">
+        <fileTransfer accessType="SFTP" host="192.168.91.130" port="22" sshConfigId="a654b22d-626c-4d7b-9f43-edb4b1b37416" sshConfig="linux03">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
