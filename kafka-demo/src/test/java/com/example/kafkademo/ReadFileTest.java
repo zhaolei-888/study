@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import org.junit.platform.commons.util.StringUtils;
 
 import java.io.*;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -103,6 +105,30 @@ public class ReadFileTest {
                 files.addAll(getFiles(f.getAbsolutePath()));
             }
         }
+        Collections.sort(files, new Comparator<File>() {
+            @Override
+            public int compare(File o1, File o2) {
+
+                if (o1.isDirectory() && o2.isFile())
+                    return -1;
+                if (o1.isFile() && o2.isDirectory())
+                    return 1;
+                //文本名称排序
+//                if(o1.getName().length() > o2.getName().length()){
+//                    return 1;
+//                }else if(o1.getName().length() < o2.getName().length()){
+//                    return -1;
+//                }
+//                return o2.getName().compareTo(o1.getName());
+
+                //数字文件名排序
+                String o1FileName = o1.getName();
+                String o2FileName = o2.getName();
+                Integer o1Value = Integer.valueOf(o1FileName.substring(0, o1FileName.lastIndexOf(".")));
+                Integer o2Value = Integer.valueOf(o2FileName.substring(0, o2FileName.lastIndexOf(".")));
+                return o1Value.compareTo(o2Value);
+            }
+        });
         return files;
     }
 
