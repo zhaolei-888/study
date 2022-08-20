@@ -13,7 +13,7 @@ import java.util.List;
 public class ReadFileTest {
     public static void main(String[] args) throws IOException {
         List<String> chapterNames = readFileLineChapterNames();
-        List<File> files = getFiles("D:\\龙族");
+        List<File> files = getFiles("D:\\dir");
         StringBuffer totalStr = new StringBuffer();
         for (int i = 0; i < files.size(); i++) {
             //需要保证元素数量对应
@@ -57,10 +57,14 @@ public class ReadFileTest {
         }
         StringBuffer totalStr = new StringBuffer();
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-        String line = null;
-        while ((line = bufferedReader.readLine()) != null) {
-            totalStr.append(line);
-//            System.out.println(line);
+//        String line = null;
+//        while ((line = bufferedReader.readLine()) != null) {
+//            totalStr.append(line);
+////            System.out.println(line);
+//        }
+        int tempchar;
+        while ((tempchar = bufferedReader.read()) != -1) {
+            totalStr.append((char) tempchar);
         }
         //关闭读入缓冲
         bufferedReader.close();
