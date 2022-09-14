@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="kafka-demo" />
         <module name="es-demo" />
+        <module name="business-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="9">
+      <module name="business-demo" target="1.8" />
       <module name="common-demo" target="16" />
       <module name="es-demo" target="1.8" />
       <module name="kafka-demo" target="1.8" />
@@ -19,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="business-demo" options="-parameters" />
       <module name="common-demo" options="-parameters" />
       <module name="es-demo" options="-parameters" />
       <module name="kafka-demo" options="-parameters" />
