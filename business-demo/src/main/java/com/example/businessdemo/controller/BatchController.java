@@ -1,15 +1,34 @@
 package com.example.businessdemo.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.example.businessdemo.dto.UserExportVO;
+import com.example.businessdemo.utils.ExcelUtil;
 import com.example.businessdemo.utils.MyThread;
+import com.example.esdemo.api.KafkaProducerServiceInterface;
+import com.example.esdemo.command.SendMessageCommand;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.*;
 
-@RestController(value = "/batch")
+@RestController
+@RequestMapping("/batch")
+@Slf4j
 public class BatchController {
 
+    @Autowired
+    private KafkaProducerServiceInterface kafkaProducerService;
 
     @GetMapping("/add")
     public void bactchAdd(){
@@ -47,4 +66,23 @@ public class BatchController {
     }
 
 
+    @GetMapping("/send")
+    public Map<Long, String> sendMessage(){
+        Map<Long, String> proSource = Maps.newHashMap();
+        proSource.put(1L, "订货订单");
+        SendMessageCommand command = new SendMessageCommand();
+        command.setMessageId("MQ001");
+        command.setProSource(proSource);
+        kafkaProducerService.sendMessage(command);
+        log.debug("proSource:{},SendMessageCommand:{}", JSON.toJSONString(proSource), JSON.toJSONString(command));
+        return proSource;
+    }
+
+
+    @GetMapping("/exportExcel")
+    public void export(HttpServletResponse response) {
+        //查询要导出的数据
+        List<UserExportVO> users = Lists.newArrayList();
+        ExcelUtil.exportExcelX(users, null, "sheet1", UserExportVO.class, "测试导出表.xlsx", response);
+    }
 }
